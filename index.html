@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mundo pc — Soporte Técnico</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚙</span>
+        <span class="logo-text">mundo pc <em> servicio tecnico</em></span>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Inicio</a>
+        <a href="views/historial.html" class="nav-link">Historial</a>
+        <a href="views/admin.html" class="nav-link">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Sistema de Diagnóstico Inteligente v2.0</p>
+      <h1 class="hero-title">¿Tu PC tiene<br/><span class="accent">un problema?</span></h1>
+      <p class="hero-sub">Selecciona tu síntoma y obtén una guía paso a paso al instante. 80 problemas cubiertos.</p>
+
+      <!-- BUSCADOR GLOBAL -->
+      <div id="searchWrap" class="search-wrap">
+        <input type="text" id="searchGlobal" class="search-global" placeholder="🔍  Escribe tu problema... ej: CPU lenta, sin internet"/>
+        <div id="searchResultados" class="search-resultados" style="display:none"></div>
+      </div>
+
+      <a href="views/diagnostico.html" class="btn-primary" style="margin-top:12px">Iniciar Diagnóstico Guiado</a>
+    </div>
+    <div class="hero-visual">
+      <div class="terminal-mock">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <div class="terminal-body">
+          <p><span class="t-green">$</span> analizando sistema...</p>
+          <p><span class="t-yellow">></span> 80 problemas indexados</p>
+          <p><span class="t-yellow">></span> 15 categorías cargadas</p>
+          <p><span class="t-yellow">></span> 20 soluciones con pasos</p>
+          <p><span class="t-green">✓</span> Base de datos lista</p>
+          <p class="blink">_</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categories">
+    <h2 class="section-title">Categorías de Problemas</h2>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stat">
+      <span class="stat-num" id="statProblemas">0</span>
+      <span class="stat-label">Problemas cubiertos</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="statSoluciones">0</span>
+      <span class="stat-label">Guías de solución</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="statCategorias">0</span>
+      <span class="stat-label">Categorías</span>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>mundo pc Pro &copy; 2026 — localStorage en desarrollo · SQL Server en producción</p>
+  </footer>
+
+  <script src="js/db.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

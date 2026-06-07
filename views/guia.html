@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía de Solución — mundo pc Pro</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="view-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="../index.html"><span class="logo-icon">⚙</span><span class="logo-text">mundo pc <em> servicio tecnico</em></span></a>
+      </div>
+      <nav class="main-nav">
+        <a href="diagnostico.html" class="nav-link">← Diagnóstico</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="guia-main">
+
+    <div class="guia-header">
+      <span class="guia-tag" id="guiaCategoria">Categoría</span>
+      <h1 id="guiaTitulo">Cargando solución...</h1>
+      <div class="guia-meta">
+        <span id="guiaDificultad">⏱ Dificultad: —</span>
+        <span id="guiaTiempo">⌛ Tiempo estimado: —</span>
+      </div>
+    </div>
+
+    <!-- ADVERTENCIA si es crítico -->
+    <div class="alert-critico" id="alertCritico" style="display:none">
+      ⚠️ <strong>Problema crítico detectado.</strong> Si no te sientes seguro, contacta a un técnico profesional.
+    </div>
+
+    <!-- PASOS -->
+    <div class="steps-list" id="stepsList">
+      <!-- Llenado por guia.js -->
+    </div>
+
+    <!-- HERRAMIENTAS NECESARIAS -->
+    <div class="tools-section">
+      <h3>🛠 Herramientas / Software necesario</h3>
+      <ul id="toolsList"></ul>
+    </div>
+
+    <!-- NOTAS ADICIONALES -->
+    <div class="notas-section" id="notasSection" style="display:none">
+      <h3>📝 Notas adicionales</h3>
+      <p id="notasTexto"></p>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="feedback-section">
+      <h3>¿Esta guía te fue útil?</h3>
+      <div class="feedback-btns">
+        <button class="fb-btn" onclick="darFeedback(true)">👍 Sí, lo resolví</button>
+        <button class="fb-btn fb-neg" onclick="darFeedback(false)">👎 No me ayudó</button>
+      </div>
+      <div class="feedback-msg" id="feedbackMsg" style="display:none"></div>
+    </div>
+
+  </main>
+
+  <script src="../js/db.js"></script>
+  <script src="../js/guia.js"></script>
+
+</body>
+</html>

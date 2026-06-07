@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin — mundo pc Pro</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="view-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="../index.html"><span class="logo-icon">⚙</span><span class="logo-text">mundo pc <em> servicio tecnico</em></span></a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html" class="nav-link">← Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-main">
+
+    <div class="page-heading">
+      <h1>Panel de Administración</h1>
+      <p>Gestiona categorías, problemas y soluciones en la base de datos.</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" onclick="switchTab('categorias')">Categorías</button>
+      <button class="tab-btn" onclick="switchTab('problemas')">Problemas</button>
+      <button class="tab-btn" onclick="switchTab('soluciones')">Soluciones</button>
+    </div>
+
+    <!-- TAB: CATEGORÍAS -->
+    <div class="tab-content active" id="tab-categorias">
+      <div class="admin-form-card">
+        <h3>Nueva Categoría</h3>
+        <div class="form-row">
+          <input type="text" id="catNombre" placeholder="Nombre de categoría" class="form-input"/>
+          <input type="text" id="catIcono" placeholder="Icono (emoji)" class="form-input short"/>
+          <button class="btn-primary" onclick="agregarCategoria()">Agregar</button>
+        </div>
+      </div>
+      <div class="admin-list" id="listaCategorias"></div>
+    </div>
+
+    <!-- TAB: PROBLEMAS -->
+    <div class="tab-content" id="tab-problemas">
+      <div class="admin-form-card">
+        <h3>Nuevo Problema</h3>
+        <div class="form-row">
+          <select id="probCategoria" class="form-input">
+            <option value="">Selecciona categoría</option>
+          </select>
+          <input type="text" id="probNombre" placeholder="Descripción del problema" class="form-input"/>
+          <button class="btn-primary" onclick="agregarProblema()">Agregar</button>
+        </div>
+      </div>
+      <div class="admin-list" id="listaProblemas"></div>
+    </div>
+
+    <!-- TAB: SOLUCIONES -->
+    <div class="tab-content" id="tab-soluciones">
+      <div class="admin-form-card">
+        <h3>Nueva Solución</h3>
+        <div class="form-col">
+          <select id="solProblema" class="form-input">
+            <option value="">Selecciona problema</option>
+          </select>
+          <input type="text" id="solTitulo" placeholder="Título de la solución" class="form-input"/>
+          <textarea id="solPasos" class="form-textarea" placeholder="Pasos (uno por línea)"></textarea>
+          <input type="text" id="solHerramientas" placeholder="Herramientas necesarias (separadas por coma)" class="form-input"/>
+          <select id="solDificultad" class="form-input">
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+          <input type="number" id="solTiempo" placeholder="Tiempo estimado (minutos)" class="form-input"/>
+          <button class="btn-primary" onclick="agregarSolucion()">Guardar Solución</button>
+        </div>
+      </div>
+      <div class="admin-list" id="listaSoluciones"></div>
+    </div>
+
+  </main>
+
+  <script src="../js/db.js"></script>
+  <script src="../js/admin.js"></script>
+
+</body>
+</html>

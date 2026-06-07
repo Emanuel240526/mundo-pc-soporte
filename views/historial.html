@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historial — mundo pc Pro</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="view-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <a href="../index.html"><span class="logo-icon">⚙</span><span class="logo-text">mundo pc <em> servicio tecnico</em></span></a>
+      </div>
+      <nav class="main-nav">
+        <a href="../index.html" class="nav-link">← Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="historial-main">
+
+    <div class="page-heading">
+      <h1>Historial de Consultas</h1>
+      <p>Todas las consultas guardadas en esta sesión / base de datos.</p>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Buscar por problema..." class="search-input" oninput="filtrarHistorial()"/>
+      <select id="catFilter" class="filter-select" onchange="filtrarHistorial()">
+        <option value="">Todas las categorías</option>
+      </select>
+      <button class="btn-ghost" onclick="limpiarHistorial()">🗑 Limpiar</button>
+    </div>
+
+    <!-- TABLA -->
+    <div class="table-wrap">
+      <table class="historial-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Categoría</th>
+            <th>Problema</th>
+            <th>Severidad</th>
+            <th>Resultado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="historialBody">
+          <!-- Llenado por historial.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="empty-state" id="emptyState" style="display:none">
+      <p>No hay consultas registradas aún.</p>
+      <a href="diagnostico.html" class="btn-primary">Hacer un diagnóstico</a>
+    </div>
+
+  </main>
+
+  <script src="../js/db.js"></script>
+  <script src="../js/historial.js"></script>
+
+</body>
+</html>
